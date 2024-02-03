@@ -1,0 +1,10 @@
+jupyterlab
+langchain
+langchain-experimental
+openai
+psycopg2-binary
+tiktoken
+faiss-cpu
+ipython
+matplotlib
+streamlit
