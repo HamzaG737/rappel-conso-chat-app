@@ -1,19 +1,29 @@
-from langchain.tools import tool, Tool
-
 import ast
 import json
+from datetime import datetime
+
+from langchain.tools import Tool
 
 from database.sql_db_langchain import db
 from tools.tools_constants import COLUMNS_DESCRIPTIONS
 
 
 def run_query_save_results(db, query):
+    """
+    Runs a query on the specified database and returns the results.
+
+    Args:
+        db: The database object to run the query on.
+        query: The query to be executed.
+
+    Returns:
+        A list containing the results of the query.
+    """
     res = db.run(query)
     res = [el for sub in ast.literal_eval(res) for el in sub]
     return res
 
 
-@tool
 def get_categories(query: str) -> str:
     """
     Useful to get categories and sub_categories. A json is returned where the key can be category or sub_category,
@@ -37,7 +47,6 @@ def get_categories(query: str) -> str:
     return category_str + sub_category_str
 
 
-@tool
 def get_columns_descriptions(query: str) -> str:
     """
     Useful to get the description of the columns in the rappel_conso_table table.
@@ -45,12 +54,10 @@ def get_columns_descriptions(query: str) -> str:
     return json.dumps(COLUMNS_DESCRIPTIONS)
 
 
-@tool
 def get_today_date(query: str) -> str:
     """
     Useful to get the date of today.
     """
-    from datetime import datetime
 
     # Getting today's date in string format
     today_date_string = datetime.now().strftime("%Y-%m-%d")
