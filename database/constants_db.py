@@ -13,7 +13,7 @@ URL_API = URL_API.format(MAX_LIMIT, "{}", "{}")
 
 # POSTGRES PARAMS
 dbname = user = "postgres"
-password = os.getenv("POSTGRES_PASSWORD")
+password = os.getenv("POSTGRES_PASSWORD", "postgres")
 host = "localhost"
 port = 5432
 
