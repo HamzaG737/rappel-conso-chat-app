@@ -15,7 +15,7 @@ URL_API = URL_API.format(MAX_LIMIT, "{}", "{}")
 dbname = user = "postgres"
 password = os.getenv("POSTGRES_PASSWORD")
 host = "localhost"
-port = 5433
+port = 5432
 
 
 NEW_COLUMNS = [
