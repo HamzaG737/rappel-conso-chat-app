@@ -1,4 +1,4 @@
-langchain~=0.0.352
+langchain~=0.1.5
 openai~=1.6.1
 psycopg2-binary~=2.9.9
 streamlit~=1.29.0
