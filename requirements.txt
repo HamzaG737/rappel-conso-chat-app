@@ -2,3 +2,4 @@ langchain~=0.0.352
 openai~=1.6.1
 psycopg2-binary~=2.9.9
 streamlit~=1.29.0
+Unidecode~=1.3.7
