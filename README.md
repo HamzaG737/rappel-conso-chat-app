@@ -40,8 +40,11 @@ To run the script, use this command:
 ```
 python database/stream_data.py
 ```
+Please note that the data transfer might take around one minute, possibly a little longer, depending on the speed of your internet connection.
 
-Now everything is set to start the chat application. For that, you can execute the following command:
+Next you need to set your `OPENAI_API_KEY` as environment variable.
+
+After that everything is set to start the chat application. For that, you can execute the following command:
 
 ```
 streamlit run streamlit_app/app.py
